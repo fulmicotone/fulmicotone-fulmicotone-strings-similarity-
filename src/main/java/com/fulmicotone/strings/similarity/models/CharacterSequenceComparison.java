@@ -4,6 +4,7 @@ import info.debatty.java.stringsimilarity.interfaces.StringDistance;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * This class represents the result of a comparison between char sequence pair
@@ -21,9 +22,7 @@ public class CharacterSequenceComparison  {
 
     public <E extends  CharacterSequence> Class<E> getComparisonClazz(){
 
-       return  ((Class) ((ParameterizedType)b.getClass()
-               .getGenericSuperclass())
-               .getActualTypeArguments()[0]);
+       return (Class<E>) b.getClass();
 
     }
 
@@ -37,5 +36,26 @@ public class CharacterSequenceComparison  {
         this.a = a;
         this.b = b;
         this.scoreMap=scoreMap;
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a.sequence, b.sequence);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if(this == obj) return true;
+
+        if(obj == null || obj.getClass()!= this.getClass()) return false;
+
+        CharacterSequenceComparison o = (CharacterSequenceComparison) obj;
+
+        return (o.a.sequence
+                .equals(this.a.sequence) &&
+                o.b.sequence
+                        .equals(this.b.sequence));
     }
 }

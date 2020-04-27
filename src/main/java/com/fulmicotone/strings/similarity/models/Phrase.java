@@ -21,7 +21,6 @@ public class Phrase extends CharacterSequence<Chunk> {
     }
 
 
-
     @Override
     public Stream<Chunk> asUnitStream() {
         AtomicInteger i=new AtomicInteger(0);
