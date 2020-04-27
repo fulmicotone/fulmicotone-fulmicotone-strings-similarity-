@@ -35,4 +35,4 @@ se through different algorithms, already well implemented in debatty / java-stri
 
 
 
-
+[![](https://jitpack.io/v/fulmicotone/fulmicotone-strings-similarity.svg)](https://jitpack.io/#fulmicotone/fulmicotone-strings-similarity)
