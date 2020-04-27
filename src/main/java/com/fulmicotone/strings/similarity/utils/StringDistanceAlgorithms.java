@@ -5,8 +5,6 @@ import info.debatty.java.stringsimilarity.JaroWinkler;
 import info.debatty.java.stringsimilarity.experimental.Sift4;
 import info.debatty.java.stringsimilarity.interfaces.StringDistance;
 
-
-
 public enum StringDistanceAlgorithms {
 
 
@@ -18,11 +16,10 @@ public enum StringDistanceAlgorithms {
 
     StringDistanceAlgorithms(Class clazz,StringDistance instance){
         this.clazz=clazz;
-    this.instance =instance;
+        this.instance =instance;
     }
 
     public <E extends  StringDistance > Class<E> getAlgorithmClass(){ return this.clazz; }
 
-    public StringDistance getInstance()
-    {return instance;}
+    public StringDistance getInstance() {return instance;}
 }

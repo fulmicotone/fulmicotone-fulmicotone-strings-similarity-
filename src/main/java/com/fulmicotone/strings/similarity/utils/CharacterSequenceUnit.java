@@ -23,10 +23,7 @@ public enum CharacterSequenceUnit {
 
    public static  CharacterSequenceUnit of(Class clazz){
         for(CharacterSequenceUnit unit :values()){
-
-            if(unit.clazz==clazz){
-                return unit;
-            }
+            if(unit.clazz==clazz){ return unit; }
         }
         return null;
     }

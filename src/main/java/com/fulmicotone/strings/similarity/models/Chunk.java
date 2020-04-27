@@ -19,7 +19,6 @@ public class Chunk extends CharacterSequence<Word> {
         super(context, sortIndex, sequence);
     }
 
-
     @Override
     public Stream<Word> asUnitStream(){
 

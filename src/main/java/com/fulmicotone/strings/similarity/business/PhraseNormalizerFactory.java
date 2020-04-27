@@ -16,17 +16,17 @@ import java.util.regex.Pattern;
  * dividing the phrase in chunk
  * @see com.fulmicotone.strings.similarity.models.Chunk
  */
-public class PhraseFactory implements Function<String, Phrase> {
+public class PhraseNormalizerFactory implements Function<String, Phrase> {
 
     private final int minWordLength;
     private final boolean applyLowerCase;
     private final String delimiter;
     private final Map<String,String> replacements;
 
-    private PhraseFactory(int minWordLength,
-                          boolean applyLowerCase,
-                          String delimiter,
-                          Map<String,String> replacements){
+    private PhraseNormalizerFactory(int minWordLength,
+                                    boolean applyLowerCase,
+                                    String delimiter,
+                                    Map<String,String> replacements){
 
         this.minWordLength =minWordLength;
         this.applyLowerCase=applyLowerCase;
@@ -38,23 +38,19 @@ public class PhraseFactory implements Function<String, Phrase> {
     public Phrase apply(String inputText) {
 
          inputText = applyLowerCase?inputText.toLowerCase():inputText;
-
          //all replacement
          for( Map.Entry<String,String>e : replacements.entrySet())
          { inputText=inputText.replace(e.getKey(),e.getValue());}
-
         if(minWordLength!=-1)
         for(String term: inputText.split(Pattern.quote(" "))){
             if(term.length()<=minWordLength){inputText=inputText.replace(term,"");}
         }
          inputText= inputText.replaceAll("\\s+", " ");
-
         return new Phrase(delimiter,null,-1,inputText);
     }
 
 
     public static Builder newOne(){ return new Builder(); }
-
 
     public static class Builder{
 
@@ -92,11 +88,11 @@ public class PhraseFactory implements Function<String, Phrase> {
             return this;
         }
 
-        public PhraseFactory standard(){ return build(); }
+        public PhraseNormalizerFactory standard(){ return build(); }
 
-        public PhraseFactory build(){
+        public PhraseNormalizerFactory build(){
 
-            return new PhraseFactory(
+            return new PhraseNormalizerFactory(
                     minWordLength,
                     applyLowerCase,
                     delimiter,

@@ -35,10 +35,7 @@ public abstract class CharacterSequence<Unit extends CharacterSequence> {
         this.parent=context;
         this.sequence =sequence;
         this.sortIndex=sortIndex;
-
-
     }
-
 
     public abstract Stream<Unit> asUnitStream();
 
