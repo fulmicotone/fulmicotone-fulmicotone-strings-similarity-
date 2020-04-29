@@ -35,4 +35,11 @@ se through different algorithms, already well implemented in debatty / java-stri
 
 
 
+
+TODO
+
+PhraseNormalizerFactory adding apply trim 
+consider when a replacement completely replaces the entire input and therefore only space remains 
+
+
 [![](https://jitpack.io/v/fulmicotone/fulmicotone-strings-similarity.svg)](https://jitpack.io/#fulmicotone/fulmicotone-strings-similarity)
