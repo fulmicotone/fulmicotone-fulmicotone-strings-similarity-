@@ -1,8 +1,5 @@
 package com.fulmicotone.strings.similarity.models;
 
-import info.debatty.java.stringsimilarity.interfaces.StringDistance;
-
-import java.lang.reflect.ParameterizedType;
 import java.util.Map;
 import java.util.Objects;
 

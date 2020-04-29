@@ -52,12 +52,12 @@ public class Similarity {
             return new Builder();
         }
 
-        public Builder withFirstFactor(PhraseNormalizerFactory one) {
+        public Builder withFirstFactorNormalizationRules(PhraseNormalizerFactory one) {
             this.one = one;
             return this;
         }
 
-        public Builder withSecondFactor(PhraseNormalizerFactory two) {
+        public Builder withSecondFactorNormalizationRules(PhraseNormalizerFactory two) {
             this.two = two;
             return this;
         }

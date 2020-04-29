@@ -83,7 +83,7 @@ public class PhraseNormalizerFactory implements Function<String, Phrase> {
         }
 
 
-        public Builder addWordToExclude(String word){
+        public Builder addDiscardWord(String word){
             replacements.putIfAbsent(word,"");
             return this;
         }

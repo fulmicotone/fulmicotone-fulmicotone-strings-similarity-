@@ -1,7 +1,6 @@
 import com.fulmicotone.strings.similarity.Similarity;
 import com.fulmicotone.strings.similarity.business.PhraseNormalizerFactory;
 import com.fulmicotone.strings.similarity.functions.OneWordIsEnoughStrategy;
-import com.sun.xml.internal.ws.policy.AssertionSet;
 import org.junit.Assert;
 
 public class Test {
@@ -12,12 +11,12 @@ public class Test {
 
         Similarity s = Similarity.Builder
                 .newOne()
-                .withFirstFactor(PhraseNormalizerFactory.newOne()
+                .withFirstFactorNormalizationRules(PhraseNormalizerFactory.newOne()
                         .withMinWordLength(3)
                         .withApplyLowerCase(true)
                         .withSplitterDelimiter("/")
                         .build())
-                .withSecondFactor(PhraseNormalizerFactory.newOne()
+                .withSecondFactorNormalizationRules(PhraseNormalizerFactory.newOne()
                         .withMinWordLength(3)
                         .withApplyLowerCase(true)
                         .withSplitterDelimiter("-")
