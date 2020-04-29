@@ -2,7 +2,7 @@
 ## **Strings-similarity**
 
 Library to compare two text input.
-First the input will be normalized, then
+First the input will be normalized then
 through one or more algorithms, already well implemented in the debatty / java-string similarity, the comparison will begin
 and finally the result will be evaluated with a personal strategy.
 
@@ -12,10 +12,10 @@ In order to define the rules that will prepare the text for comparison we must u
 
 We can set the following rules: 
  - skip the word with length < n
- - lower case all the input
- - split in chunks using the splitterDelimiter
- - replace a word with an other
- - discard a word
+ - lower casing all the input
+ - splitting in chunks using the splitterDelimiter
+ - replacing one or more word with an other
+ - discarding one or more a word
 
 
          PhraseNormalizerFactory.newOne()
