@@ -29,8 +29,7 @@ We can set the following rules:
  After applying PhraseNormalizerFactory the output is an  organised object where the text
   is subdivided in Phrase, Chunks and Words. 
  
-Each of these objects belongs to the family of the CharacterSequence.
-Each of Them has three main fields, useful in order to 
+Each of these objects belongs to the family of the CharacterSequence and have three main fields useful in order to 
 know  where it come from,what place it had in its context and   what it contains:
 - parent defines from where is has been extracted
 - sort index indicates the order inside is root context
