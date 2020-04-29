@@ -75,29 +75,25 @@ passed or not.
 
 ###### **Here an example ** 
 
-                //PhraseNormalizerFactory
-                //is an object used to define 
-                //the input normalization rules
-                 
-                
-                   Similarity s = Similarity.Builder
-                .newOne()
-                .withFirstFactorNormalizationRules(PhraseNormalizerFactory.newOne()
-                        .withMinWordLength(3)
-                        .withApplyLowerCase(true)
-                        .withSplitterDelimiter("/")
-                        .build())
-                .withSecondFactorNormalizationRules(PhraseNormalizerFactory.newOne()
-                        .withMinWordLength(3)
-                        .withApplyLowerCase(true)
-                        .withSplitterDelimiter("-")
-                        .build())
-                .addPassedStrategy(new OneWordIsEnoughStrategy(), Similarity.Builder.LogicalOperator.OR)
-              .build();
+            
+      Similarity s = Similarity.Builder
+      .newOne()
+      .withFirstFactorNormalizationRules(PhraseNormalizerFactory.newOne()
+      .withMinWordLength(3)
+      .withApplyLowerCase(true)
+      .withSplitterDelimiter("/")
+      .build())
+      .withSecondFactorNormalizationRules(PhraseNormalizerFactory.newOne()
+      .withMinWordLength(3)
+      .withApplyLowerCase(true)
+      .withSplitterDelimiter("-")
+      .build())
+      .addPassedStrategy(new OneWordIsEnoughStrategy(), Similarity.Builder.LogicalOperator.OR)
+      .build();
               
-              boolean willbetrue= s.compare("soccer/player/ball", "soccer and play-shoes-bombastic");
+      boolean willbetrue= s.compare("soccer/player/ball", "soccer and play-shoes-bombastic");
 
-              boolean willbefalse= s.compare("tennis/player/field", "rock and base-shoes-bombastic");
+      boolean willbefalse= s.compare("tennis/player/field", "rock and base-shoes-bombastic");
 
 
 
