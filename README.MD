@@ -6,7 +6,7 @@ First the input will be normalized, then
 through one or more algorithms, already well implemented in the debatty / java-string similarity, the comparison will begin
 and finally the result will be evaluated with a personal strategy.
 
-#### **Normalization**
+### **Normalization**
 
 In order to define the rules that will prepare the text for comparison we must use  the class **PhraseNormalizerFactory**
 
@@ -18,13 +18,13 @@ We can set the following rules:
  - discard a word
 
 
-    PhraseNormalizerFactory.newOne()
-     .withMinWordLength(3)
-     .withApplyLowerCase(true)
-     .withSplitterDelimiter("/")
-     .addReplacement( word, replace)
-     .addDiscardWord(String word)
-     .build()
+         PhraseNormalizerFactory.newOne()
+         .withMinWordLength(3)
+         .withApplyLowerCase(true)
+         .withSplitterDelimiter("/")
+         .addReplacement( word, replace)
+         .addDiscardWord(String word)
+         .build()
      
  After applying PhraseNormalizerFactory the output is an  organised object where the text
   is subdivided in Phrase, Chunks and Words. 
@@ -38,7 +38,7 @@ know  where it come from,what place it had in its context and   what it contains
 
 These fields can be important in a comparison between two CharacterSequence.
 
-#### **Comparison**
+### **Comparison**
 
 This process involves comparing in any combination each CharacterSequence normalized of the same type, 
 Phrase with Phrase, Chunk with Chunk, Word with Word.
@@ -52,7 +52,7 @@ Each CharacterSequenceComparison will be collected in a ComparingResult and then
 already defined that will evaluate if the compare is passed or not.
 
 
-#### **Compare Result Evaluation**
+### **Compare Result Evaluation**
 
 We can define one or more  Compare result evaluation strategy 
 then relate them to each other through the logical operators OR or AND.
@@ -73,7 +73,7 @@ passed or not.
     }
 
 
-###### **Here an example ** 
+###### **EXAMPLE**  
 
             
       Similarity s = Similarity.Builder
